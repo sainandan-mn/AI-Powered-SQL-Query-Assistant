@@ -1,3 +1,6 @@
+
+⸻
+
 AI-Powered SQL Query Assistant
 
 Overview
@@ -35,7 +38,6 @@ Only validated queries are executed against the database.
 ⸻
 
 Execution Flow
-
 User (Browser)
    ↓
 Streamlit UI (app.py)
@@ -68,13 +70,11 @@ Technology Stack
 
 ⸻
 
-High-Level Architecture
-
+High-Level Architectur
 
 ⸻
 
 Project Structure
-
 AI-Powered-SQL-Query-Assistant/
 ├── README.md               # Project documentation
 ├── app.py                # Streamlit UI & request controller
@@ -83,143 +83,3 @@ AI-Powered-SQL-Query-Assistant/
 ├── assets/              # Architecture diagrams & UI images
 └── .gitignore
 
-
-⸻
-
-Components Explained
-
-1. Streamlit UI (app.py)
-	•	Accepts user queries in natural language
-	•	Displays generated SQL
-	•	Displays validated SQL
-	•	Renders database results in a table
-	•	Acts as the controller between user and backend
-
-⸻
-
-2. SQL Generator (Gemini LLM)
-	•	Receives the full database schema
-	•	Converts natural language into SQL
-	•	Returns a single-line query with no formatting or explanation
-	•	Acts as a query suggestion engine, not a trusted executor
-
-⸻
-
-3. Validation Layer (python_backend.py)
-
-This is the core safety system.
-
-It performs:
-	•	Schema validation (tables and columns must exist)
-	•	Operation filtering (blocks non-SELECT queries)
-	•	Query normalization (format cleanup and sanitization)
-
-If any rule fails, execution is blocked.
-
-⸻
-
-4. Query Executor
-	•	Runs only validated SQL
-	•	Connects to MySQL using SQLAlchemy
-	•	Returns structured results to the UI
-
-⸻
-
-5. Experimental Backend (raw_backend.py)
-	•	Generates SQL using Gemini
-	•	Skips validation
-	•	Used for testing, benchmarking, and comparison
-	•	Demonstrates why validation is critical
-
-⸻
-
-Security Model
-	•	API keys stored as environment variables
-	•	Database credentials excluded from GitHub using .gitignore
-	•	No secrets hardcoded in source code
-	•	Backend-only database access
-	•	LLM output sandboxed by validation rules
-
-⸻
-
-Setup & Execution
-
-Set Environment Variables
-
-export GEMINI_API_KEY="your_api_key"
-export MYSQL_PASSWORD="your_mysql_password"
-
-
-⸻
-
-Install Dependencies
-
-pip install streamlit langchain langchain-community langchain-google-genai pymysql sqlalchemy pandas
-
-
-⸻
-
-Run Application
-
-streamlit run app.py
-
-
-⸻
-
-Validation Demonstration
-
-Generated SQL
-
-Shows the raw output produced by Gemini.
-
-Validated SQL
-
-Displays the same query after passing safety and schema checks.
-
-Result Table
-
-Only appears if the query passes validation and executes successfully.
-
-⸻
-
-Use Case
-
-This project demonstrates how LLMs can be safely integrated into real database systems by treating them as assistants rather than authorities.
-
-It is designed for:
-	•	AI engineering
-	•	Data engineering
-	•	Secure system design
-	•	Cloud and backend roles
-
-⸻
-
-Future Improvements
-	•	RAGAS-based evaluation for SQL faithfulness and correctness
-	•	Query confidence scoring
-	•	Natural language SQL explanation
-	•	Role-based database access
-	•	Multi-database support (PostgreSQL, BigQuery, Snowflake)
-	•	Query performance analysis
-
-⸻
-
-Key Learnings
-	•	Secure LLM integration patterns
-	•	Schema-aware query validation
-	•	Production-safe database access
-	•	Streamlit system design
-	•	Prompt engineering for structured output
-	•	Backend safety enforcement
-
-⸻
-
-Author
-
-Sai Nandan MN
-AI Systems | Data Engineering | Cloud | Secure LLM Applications
-
-⸻
-
-If you want, I can also give you a one-minute interview script that walks through this architecture cleanly and confidently.
-This README already positions you as someone who understands real-world AI system safety, not just model usage.

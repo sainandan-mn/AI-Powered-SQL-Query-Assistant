@@ -1,0 +1,6 @@
+venv311/
+jupyter-work/
+.env
+__pycache__/
+*.pyc
+.DS_Store

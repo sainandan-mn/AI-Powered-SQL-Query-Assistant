@@ -177,7 +177,7 @@ This file shows the **baseline system** without validation.
 Purpose:
 
 * Demonstrates the risk of executing LLM-generated SQL directly
-* Serves as a comparison layer for learning and interviews
+* Serves as a comparison layer for learning.
 
 This is useful for explaining:
 

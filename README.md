@@ -14,7 +14,7 @@ This project demonstrates how modern LLMs can be safely integrated into real dat
 
 > System Architecture
 
-![Architecture Diagram](assets/Architecture_diagram.png)
+![Architecture Diagram](assets/Architecture_diagram_updated.png)
 
 ---
 
@@ -316,3 +316,4 @@ AI | Data | Cloud Engineering
 ---
 
 > This project was built to demonstrate how AI systems can move beyond demos and into **secure, production-grade data tools.**
+
